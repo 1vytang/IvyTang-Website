@@ -99,7 +99,6 @@ export default function Page() {
           <p className="hero-note">
             *All photos were taken by me during my travels in Asia
           </p>
-          <a href="/research" className="button-59 banner-cta hero-cta">Learn About Ivy</a>
         </div>
       </section>
 

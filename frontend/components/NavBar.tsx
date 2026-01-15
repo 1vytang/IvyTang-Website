@@ -65,9 +65,9 @@ export default function NavBar() {
                         [font-family:var(--font-manrope)]
                         transition-all duration-300">
 
-                    <Link href="/Extracurriculars" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Extracurriculars</Link>
-                    <Link href="/Research" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Research</Link>
-                    <Link href="/Projects" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Projects</Link>
+                    <Link href="/extracurriculars" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Extracurriculars</Link>
+                    <Link href="/research" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Research</Link>
+                    <Link href="/projects" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Projects</Link>
                 </div>
             )}
         </nav>
