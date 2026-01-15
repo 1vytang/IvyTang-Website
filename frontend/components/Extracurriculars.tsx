@@ -160,7 +160,7 @@ export default function ProductPage() {
                     I joined Women in CyberSecurity (WiCyS) in Spring 2025 and was elected Secretary in Fall 2025.
                     WiCyS is important to me because I am passionate about increasing access and representation for gender minorities in STEM and cybersecurity.
                     This is a continuation of a childhood of such activities which were what allowed me to pursue cybersecurity in the first place including Girl Scouts and serving as Captain of an all-girls FIRST Robotics team.
-                    Through these activities, I saw firsthand how mentorship and opportunity help talented students thrive. Our team's mission was featured by Boston radio station GBH{" "}
+                    Through these activities, I saw firsthand how mentorship and opportunity help talented students thrive. Our team&apos;s mission was featured by Boston radio station GBH{" "}
                     <a
                         href="https://www.wgbh.org/news/national/2023-04-04/lexington-robotics-team-engineers-space-for-girls-to-thrive-in-stem"
                         className="text-blue-400 underline hover:text-blue-300 transition"

@@ -94,7 +94,7 @@ export default function Page() {
             Ivy Tang
           </h1>
           <p className="hero-sub">
-            Hi! I'm Ivy, an aspiring Cybersecurity Analyst at Northeastern University
+            Hi! I&apos;m Ivy, an aspiring Cybersecurity Analyst at Northeastern University
           </p>
           <p className="hero-note">
             *All photos were taken by me during my travels in Asia
@@ -109,7 +109,7 @@ export default function Page() {
       <section className="section why" aria-labelledby="why-heading">
         <div className="why-wrap">
         <h2 className="why-hero">
-          Defense in soccer for 8 years, predicting my teacher's questions on tests for 9, and arguing with my sister for 18, I guess you could say that I have been analyzing, anticipating, and responding to different attacks for a while.
+          Defense in soccer for 8 years, predicting my teachers&apos; questions on tests for 9, and arguing with my sister for 18, I guess you could say that I have been analyzing, anticipating, and responding to different attacks for a while.
         </h2>
         <h2 className="why-hero">
           The result was my decision to concentrate my interest in computer science on threat detection, systems security, and risk assessment.
