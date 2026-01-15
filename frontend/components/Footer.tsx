@@ -6,20 +6,11 @@ import Link from "next/link";
 const year = new Date().getFullYear();
 
 const navLinks = [
-  { href: "/smartride", label: "SmartRide" },
-  { href: "/upcoming", label: "Upcoming" },
-  { href: "/community", label: "Community" },
-  { href: "/about", label: "About" },
+  { href: "/Extracurriculars", label: "Extracurriculars" },
+  { href: "/Research", label: "Research" },
+  { href: "/Projects", label: "Projects" },
 ];
 
-function IconYouTube(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" />
-      <path d="M10 9l6 3-6 3V9z" fill="currentColor" />
-    </svg>
-  );
-}
 function IconLinkedIn(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -40,9 +31,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center">
               <Image
-                src="/flowmersion_logo.png"
-                alt="Flowmersion"
-                width={1000}
+                src="/Ivy-logo.png"
+                alt="IvyTang Logo"
+                width={200}
                 height={200}
                 priority
                 className="block w-auto h-[72px]"
@@ -50,14 +41,11 @@ export default function Footer() {
             </div>
 
             <p className="mt-6 text-white/85 text-lg leading-snug max-w-2xl">
-              On a mission to make mountain sports safe, smart and accessible.
+              Ivy Tang - Cybersecurity Major at Northeastern University
             </p>
 
             <div className="mt-6 flex items-center gap-4">
-              <Link aria-label="YouTube" href="#" className="text-white hover:text-white/80">
-                <IconYouTube className="h-6 w-6" />
-              </Link>
-              <Link aria-label="LinkedIn" href="#" className="text-white hover:text-white/80">
+              <Link aria-label="LinkedIn" href="https://www.linkedin.com/in/ivy-tang-northeastern/" className="text-white hover:text-white/80">
                 <IconLinkedIn className="h-6 w-6" />
               </Link>
             </div>
@@ -83,19 +71,19 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-medium text-white">Contact</h3>
             <div className="space-y-1">
-              <p className="text-white">Naman Gupta, Co-Founder</p>
+              <p className="text-white">Ivy Tang</p>
               <a
-                href="mailto:naman.eidar@gmail.com"
+                href="mailto:tang.ivy@northeastern.edu"
                 className="text-white hover:text-white/80 visited:text-white active:text-white break-all"
               >
-                naman.eidar@gmail.com
+                tang.ivy@northeastern.edu
               </a>
             </div>
           </div>
         </div>
 
         {/* divider */}
-        <hr className="mt-10 border-t-2 border-[#86bfd3]" />
+        <hr className="mt-10 border-t-2 border-[#000000]" />
 
         {/* bottom bar */}
         <div className="py-4 text-center text-sm text-white/80">

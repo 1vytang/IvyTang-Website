@@ -6,7 +6,7 @@ import "./homepage.css";
 type BannerOffsets = { imgY: number; textY: number };
 
 export default function Page() {
-  // ----- HERO REVEAL -----
+  // HERO REVEAL 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [reveal, setReveal] = useState(false);
 
@@ -19,7 +19,7 @@ export default function Page() {
       try { v.pause(); } catch {}
     };
 
-    // Fallback: if ended isn't fired (autoplay blocked/short clip), reveal anyway
+    // Fallback: reveal anyway
     const fallback = window.setTimeout(() => setReveal(true), 9000);
 
     v.addEventListener('ended', onEnded);
@@ -29,7 +29,7 @@ export default function Page() {
     };
   }, []);
 
-  // ----- BANNER PARALLAX -----
+  // BANNER PARALLAX 
   const bannerRef = useRef<HTMLElement | null>(null);
   const [bannerOffsets, setBannerOffsets] = useState<BannerOffsets>({ imgY: 0, textY: 0 });
 
@@ -81,7 +81,7 @@ export default function Page() {
           // no loop: we only want one playthrough
           poster="/hero-poster.jpg"
         >
-          <source src="/intro-video.mp4" type="video/mp4" />
+          <source src="/asia_photos.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -91,12 +91,15 @@ export default function Page() {
         {/* Content that fades/slides in after video ends */}
         <div className="hero-content">
           <h1 className="hero-title">
-            The motion tech that<br />levels up your ride.
+            Ivy Tang
           </h1>
           <p className="hero-sub">
-            Flowmersion captures how you move, turning motion into insight and insight into flow.
+            Hi! I'm Ivy, an aspiring Cybersecurity Analyst at Northeastern University
           </p>
-          <a href="/community" className="button-59 banner-cta hero-cta">Join Now</a>
+          <p className="hero-note">
+            *All photos were taken by me during my travels in Asia
+          </p>
+          <a href="/research" className="button-59 banner-cta hero-cta">Learn About Ivy</a>
         </div>
       </section>
 
@@ -105,32 +108,44 @@ export default function Page() {
       {/* SECTION 2 — Centered “Why us” */}
       <section className="section why" aria-labelledby="why-heading">
         <div className="why-wrap">
-          <h2 id="why-heading" className="why-hero">Train Smarter. Ride in Flow.</h2>
-          <p className="why-sub">So you can push harder, ride smarter, and relive every line.</p>
-
+        <h2 className="why-hero">
+          Defense in soccer for 8 years, predicting my teacher's questions on tests for 9, and arguing with my sister for 18, I guess you could say that I have been analyzing, anticipating, and responding to different attacks for a while.
+        </h2>
+        <h2 className="why-hero">
+          The result was my decision to concentrate my interest in computer science on threat detection, systems security, and risk assessment.
+        </h2>
           <figure className="why-figure">
-            <img src="/happy-snowboarders.png" alt="Three snowboarders smiling with their hands raised up." />
+            <img src="/ivy.png" alt="Smiling girl with black hair." />
           </figure>
 
           <div className="why-cols why-cols--aud">
           <div className="why-card">
-            <h3 className="why-col-title">For Parents</h3>
-            <p className="why-col-body">
-              Track your child’s location, progress, and safety — peace of mind on slopes.
+            <h3 className="why-col-title">Relevant Coursework</h3>
+            <p>
+              <strong>Completed:</strong> Introduction to Cybersecurity (A), Computer Systems (A-), Object Oriented Design (A)
+            </p>
+            <p>
+              <strong>Ongoing:</strong> Systems Security, Network Fundamentals, Introduction to Law
             </p>
           </div>
 
           <div className="why-card">
-            <h3 className="why-col-title">For Resorts</h3>
+            <h3 className="why-col-title">Languages & Tools</h3>
             <p className="why-col-body">
-              Host competitions, track riders, and engage guests with real-time data and leaderboards.
+              Java, C, Racket, Python, React, Linux, JavaScript, Git, HTML/CSS, VSCode, IntelliJ, Eclipse, SQL
             </p>
           </div>
 
           <div className="why-card">
-            <h3 className="why-col-title">For Riders</h3>
+            <h3 className="why-col-title">Academics</h3>
             <p className="why-col-body">
-              Visualize your ride, relive every run, and compete with friends — because progress should feel fun.
+              <strong> Northeastern University: </strong> 3.66/4.0 GPA, Deans List
+            </p>
+            <p className="why-col-body">
+              Cybersecurity Major, Madrid Study Abroad Experience
+            </p>
+            <p className="why-col-body">
+              <strong> Lexington High School: </strong> 3.93/4.0 GPA, Honor Roll
             </p>
           </div>
         </div>
@@ -140,8 +155,8 @@ export default function Page() {
       {/* BANNER */}
       <section className="full-bleed image-banner" aria-label="Banner image" ref={bannerRef}>
         <img
-          src="/snowboarders.png"
-          alt="A biker adventure"
+          src="/cafe.png"
+          alt="Beautiful snow and sparkle themed cafe in Tokyo, Japan"
           className="banner-image"
           style={{ transform: `translateY(${bannerOffsets.imgY}px)` }}
         />
@@ -149,9 +164,10 @@ export default function Page() {
           className="banner-overlay"
           style={{ transform: `translateY(${bannerOffsets.textY}px)` }}
         >
-          <h2 className="banner-text">Every Turn Tells A Story...</h2>
-          <p className="banner-caption"> Let's capture yours! </p>
-          <a className="button-59 banner-cta" href="/community">Join Us</a>
+          <h2 className="banner-text">Besides academics...</h2>
+          <p className="banner-caption"> - I run a 5 star pet-sitting business and have taken care of 60+ pets from geckos to bunnies </p>
+          <p className="banner-caption"> - I enjoy new experiences and competitive challenges, including winning a local spicy food competition </p>
+          <p className="banner-caption"> - I maintain a Pinterest Business Account documenting my food and cultural experiences </p>
         </div>
       </section>
     </>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/flowmersion_logo.png"
+import logo from "../public/Ivy-logo.png";
 import {useState} from "react";
 
 export default function NavBar() {
@@ -20,30 +20,26 @@ export default function NavBar() {
         <nav className="w-full h-[15vh] backdrop-blur-sm fixed top-0 left-0 z-50">
             <div className="w-full h-full px-10 flex justify-between items-center">
                 <Link href="/" className="flex items-center sm:pl-6 md: pl-8 lg:pl-10">
-                    <Image src={logo} alt="Logo" width={400}
-                           height={400} className="cursor-pointer" priority/>
+                    <Image src={logo} alt="Logo" width={200}
+                           height={200} className="cursor-pointer" priority/>
                 </Link>
 
                 <div className="hidden md:flex items-center sm:space-x-4 md:text-xl lg:text-2xl md:space-x-8 lg:space-x-16
                                 [font-family:var(--font-manrope)] sm:pr-6 md:pr-8 lg:pr-10">
-                    <Link href="/smartride" // previously, product.
+
+                    <Link href="/extracurriculars"
                           className="text-white hover:text-gray-300 transition-colors duration-200">
-                        SmartRide
+                        Extracurriculars
                     </Link>
 
-                    <Link href="/upcoming" // previously, simulator.
+                    <Link href="/research" 
                           className="text-white hover:text-gray-300 transition-colors duration-200">
-                        Upcoming
+                        Research
                     </Link>
 
-                    <Link href="/community" // previously, community.
+                    <Link href="/Projects" 
                           className="text-white hover:text-gray-300 transition-colors duration-200">
-                        Community
-                    </Link>
-
-                    <Link href="/about" // previously, about.
-                          className="text-white hover:text-gray-300 transition-colors duration-200">
-                        About
+                        Projects
                     </Link>
                 </div>
 
@@ -69,10 +65,9 @@ export default function NavBar() {
                         [font-family:var(--font-manrope)]
                         transition-all duration-300">
 
-                    <Link href="/smartride" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">SmartRide</Link>
-                    <Link href="/upcoming" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Upcoming</Link>
-                    <Link href="/community" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Community</Link>
-                    <Link href="/about" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">About</Link>
+                    <Link href="/Extracurriculars" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Extracurriculars</Link>
+                    <Link href="/Research" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Research</Link>
+                    <Link href="/Projects" onClick={() => closeTheBurger()} className="text-white hover:text-gray-300 transition-colors duration-200">Projects</Link>
                 </div>
             )}
         </nav>

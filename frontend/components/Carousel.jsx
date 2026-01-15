@@ -1,34 +1,35 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 
 export default function Carousel() {
   const firstSlide = {
-    kicker: 'Smart Sensor',
-    title: 'Meet Snowin',
-    headline: 'Your Board,\nUpgraded.',
+    title: 'Extracurriculars',
+    headline: 'What does it mean to be\n a Leader at Northeastern?',
     body:
-      'Your board, upgraded. The SnowIn Core attaches seamlessly to any snowboard, tracking speed, airtime, turns, and balance in real time. Lightweight. Waterproof. Impact-proof. Ready for every run.',
+      'Learn about my involvement on campus as the Secretary of Women in Cybersecurity and a Senior developer on Scout.',
     cta: 'Learn More',
-    img: '/product-image.png', // path from /public
+    img: '/wicys.png',
+    href: '/extracurriculars',
   };
   const secondSlide = {
-    kicker: 'Meet our Simulator',
-    title: 'Indoor Simulator',
-    headline: 'Make snowboarding\n safe, trainable, and\n accessible all year round.',
+    title: 'Research',
+    headline: 'Real impact backed by \nreal research.',
     body:
-      'Train smarter before you hit the snow.',
+      'Learn about my research on airtags under Professor Guevara Noubir and Doctor Abhi Mishra.',
     cta: 'Learn More',
-    img: '/drone.png', // path from /public
+    img: '/airtag.png', 
+    href: '/research',
   };
   const thirdSlide = {
-    kicker: 'Snowin App',
-    title: 'Meet Snowin App',
-    headline: 'Track, analyze, perform,\nrepeat.',
+    title: 'Projects',
+    headline: 'Functional projects with unlimited possibilities',
     body:
-      'Your mountain, visualized. Sync your core to the SnowIn app to see live stats, 3D ride replays, and detailed performance analytics.',
-    cta: 'Learn More',
-    img: '/phone.png', // path from /public
+      'Learn about my projects with potential for real-world use.',
+    cta: 'Learn More', 
+    img: '/StartGame.png', 
+    href: '/Projects',
   };
   const slides = [firstSlide, secondSlide, thirdSlide];
 
@@ -53,13 +54,20 @@ export default function Carousel() {
       onMouseEnter={pause}
       onMouseLeave={resume}
     >
+    <div className="carousel-topfade" />
       <div className="carousel-track" style={{ transform: `translateX(-${index * 100}%)` }}>
         {slides.map((s, i) => (
-          <article className="slide" key={i} aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`}>
+          <article
+          className="slide"
+          key={i}
+          aria-roledescription="slide"
+          aria-label={`${i + 1} of ${slides.length}`}
+        >
+          <Link href={s.href} className="slide-link">
             <div className="slide-inner">
               <div className="slide-copy">
                 <h1 className="slide-title">{s.title}</h1>
-                <div className="slide-kicker">{s.kicker}</div>
+        
                 <h3 className="slide-headline">
                   {s.headline.split('\n').map((line, li) => (
                     <span key={li}>
@@ -68,19 +76,22 @@ export default function Carousel() {
                     </span>
                   ))}
                 </h3>
+        
                 <p className="slide-body">{s.body}</p>
-                <a className="button-59 banner-cta" href="/smartride">{s.cta}</a>
+        
+                {/* CTA is now just visual, not a link */}
+                <span className="button-59 banner-cta">
+                  {s.cta}
+                </span>
               </div>
-
-              <figure className={`slide-asset ${s.img === '/drone.png' ? 'is-drone' : ''}`}>
-                {s.img === '/drone.png' ? (
-                    <img src={s.img} alt={s.title} className="slide-img--drone" />
-                ) : (
-                    <img src={s.img} alt={s.title} />
-                )}
-                </figure>
+        
+              <figure className="slide-asset">
+                <img src={s.img} alt={s.title} />
+              </figure>
             </div>
-          </article>
+          </Link>
+        </article>
+        
         ))}
       </div>
 
