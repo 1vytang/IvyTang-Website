@@ -6,9 +6,9 @@ import Link from "next/link";
 const year = new Date().getFullYear();
 
 const navLinks = [
-  { href: "/Extracurriculars", label: "Extracurriculars" },
-  { href: "/Research", label: "Research" },
-  { href: "/Projects", label: "Projects" },
+  { href: "/extracurriculars", label: "Extracurriculars" },
+  { href: "/research", label: "Research" },
+  { href: "/projects", label: "Projects" },
 ];
 
 function IconLinkedIn(props: React.SVGProps<SVGSVGElement>) {

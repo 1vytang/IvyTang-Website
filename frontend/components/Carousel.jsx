@@ -29,7 +29,7 @@ export default function Carousel() {
       'Learn about my projects with potential for real-world use.',
     cta: 'Learn More', 
     img: '/StartGame.png', 
-    href: '/Projects',
+    href: '/projects',
   };
   const slides = [firstSlide, secondSlide, thirdSlide];
 

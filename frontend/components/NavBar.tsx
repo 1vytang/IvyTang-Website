@@ -37,7 +37,7 @@ export default function NavBar() {
                         Research
                     </Link>
 
-                    <Link href="/Projects" 
+                    <Link href="/projects" 
                           className="text-white hover:text-gray-300 transition-colors duration-200">
                         Projects
                     </Link>
