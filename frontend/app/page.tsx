@@ -97,7 +97,7 @@ export default function Page() {
             Hi! I&apos;m Ivy, an aspiring Cybersecurity Analyst at Northeastern University
           </p>
           <p className="hero-note">
-            *All photos were taken by me during my travels in Asia
+            *All photos were taken during my travels in Asia
           </p>
         </div>
       </section>
