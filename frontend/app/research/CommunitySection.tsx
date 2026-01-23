@@ -76,7 +76,7 @@ export default function CommunitySection() {
               I identified clear and repeatable patterns that
               distinguish <strong>nearby</strong> versus{" "}
               <strong>lost tracking states</strong> across multiple brands. Using this data,
-               devices can be fingerprinted and distinguished if it has been with the user for an extended peiord of time.
+               devices can be fingerprinted by CFO and distinguished if it has been with the user for an extended period of time.
             </p>
 
             <p className="mt-5">
