@@ -7,7 +7,8 @@ import { StaticImageData } from "next/image";
 const images = [
     '/pb_gbh.png',
     '/pb_group.png',
-    '/steam_team.png'
+    '/steam_team.png',
+    '/steam_team2.png'
 ];
 
 /**
