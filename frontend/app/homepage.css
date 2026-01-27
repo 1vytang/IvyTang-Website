@@ -53,7 +53,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 .why-hero{
   margin-bottom: 2.5rem;
   font-weight: 200;
-  font-size: clamp(1.05rem, 2.4vw, 3rem);
+  font-size: clamp(1.05rem, 1.5vw, 3rem);
   line-height: 1.35;
 }
 
@@ -488,11 +488,11 @@ img, video { max-width: 100%; height: auto; display: block; }
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-  margin:0 0 2.25rem 0; /* was 6rem (pushes content off on smaller screens) */
+  margin:0 0 2.25rem 0; 
 }
 
 .slide-headline{
-  font-size: clamp(1.6rem, 4.8vw, 4.7rem);
+  font-size: clamp(1.6rem, 3vw, 4.7rem);
   line-height:1.1;
   margin:.35rem 0 1rem 0;
   font-weight:300;
@@ -588,10 +588,6 @@ footer > *:first-child { margin-top: 0; }
   left: 50%;
   margin-left: -50vw;
 }
-
-/* -----------------------------
-   MOBILE REFORMATTING (key part)
-   ----------------------------- */
 
 @media (max-width: 768px){
   /* Carousel: stack text above image */

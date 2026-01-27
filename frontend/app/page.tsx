@@ -108,7 +108,7 @@ export default function Page() {
       <section className="section why" aria-labelledby="why-heading">
         <div className="why-wrap">
         <h2 className="why-hero">
-          Defense in soccer for 8 years, predicting my teachers&apos; questions on tests for 9, and arguing with my sister for 18, I guess you could say that I have been analyzing, anticipating, and responding to different attacks for a while.
+          Playing the french defense opening in chess for 4, defender in soccer for 8 years, and debating with my sister for 18, I guess you could say that I have been analyzing, anticipating, and responding to different attacks for a while.
         </h2>
         <h2 className="why-hero">
           The result was my decision to concentrate my interest in computer science on threat detection, systems security, and risk assessment.
@@ -131,7 +131,7 @@ export default function Page() {
           <div className="why-card">
             <h3 className="why-col-title">Languages & Tools</h3>
             <p className="why-col-body">
-              Java, C, Racket, Python, React, Linux, JavaScript, Git, HTML/CSS, VSCode, IntelliJ, Eclipse, SQL
+              Java, C/C++, Python, React, Linux, JavaScript, Git, HTML/CSS, VSCode, IntelliJ, Eclipse, SQL, Google Suite, Microsoft Office
             </p>
           </div>
 
