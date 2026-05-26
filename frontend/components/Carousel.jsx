@@ -6,27 +6,27 @@ import Link from 'next/link';
 export default function Carousel() {
   const firstSlide = {
     title: 'Extracurriculars',
-    headline: 'What does it mean to be\n a Leader at Northeastern?',
+    headline: 'Exercising leadership and passion beyond the classroom',
     body:
-      'Learn about my involvement on campus as the Secretary of Women in Cybersecurity and a Senior developer on Scout.',
+      'Body.',
     cta: 'Learn More',
     img: '/wicys.png',
     href: '/extracurriculars',
   };
   const secondSlide = {
     title: 'Research',
-    headline: 'Real impact backed by \nreal research.',
+    headline: 'Challenging my boundaries of knowledge in cybersecurity',
     body:
-      'Learn about my research on airtags under Professor Guevara Noubir and Doctor Abhi Mishra.',
+      'Body',
     cta: 'Learn More',
     img: '/airtag.png', 
     href: '/research',
   };
   const thirdSlide = {
     title: 'Projects',
-    headline: 'Functional projects with unlimited possibilities',
+    headline: 'Functional projects with real world applications',
     body:
-      'Learn about my projects with potential for real-world use.',
+      'Body',
     cta: 'Learn More', 
     img: '/StartGame.png', 
     href: '/projects',

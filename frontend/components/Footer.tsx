@@ -52,20 +52,20 @@ export default function Footer() {
           </div>
 
           {/* MIDDLE: links */}
-        <div className="ml-16 md:ml-24">
-        <ul className="space-y-3 text-white">
-            {navLinks.map((l) => (
-            <li key={l.href}>
-                <Link
-                href={l.href}
-                className="text-white hover:text-white/80 visited:text-white active:text-white"
-                >
-                {l.label}
-                </Link>
-            </li>
-            ))}
-        </ul>
-        </div>
+          <div className="ml-0 md:ml-24">
+            <ul className="space-y-3 text-white">
+              {navLinks.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-white hover:text-white/80 visited:text-white active:text-white"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* RIGHT: contact */}
           <div>

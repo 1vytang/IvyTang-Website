@@ -10,6 +10,8 @@
     rgba(0,0,0,.6) 100%
   );
   --bg-panel: #000000;
+  --divider-line: rgba(255,255,255,.14);
+  --divider-dot: rgba(255,255,255,.55);
   --px: 0px;
 }
 
@@ -37,8 +39,29 @@ img, video { max-width: 100%; height: auto; display: block; }
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-  background: var(--bg-panel);
-  padding-block: clamp(5rem, 10vw, 11rem);
+  margin-top: -1px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at center top,
+      rgba(255,255,255,.035) 0%,
+      rgba(255,255,255,0) 48%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,1) 0%,
+      var(--bg-panel) 130px,
+      var(--bg-panel) 100%
+    );
+  padding-block: clamp(7rem, 11vw, 12rem) clamp(5rem, 10vw, 11rem);
+}
+
+.section.why::before {
+  content: none;
+}
+
+.section.why::after {
+  content: none;
 }
 .section.alt { background: var(--bg-1); }
 
@@ -53,7 +76,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 .why-hero{
   margin-bottom: 2.5rem;
   font-weight: 200;
-  font-size: clamp(1.05rem, 1.5vw, 3rem);
+  font-size: clamp(1.05rem, 1.8vw, 3rem);
   line-height: 1.35;
 }
 
@@ -397,8 +420,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 
 /* Carousel Section */
 .carousel{
-  /* was 850px/95vh; that’s too big on small phones */
-  --carousel-height: clamp(520px, 88vh, 960px);
+  --carousel-height: clamp(520px, 90vh, 960px);
 
   position:relative;
   width:100vw;
@@ -406,38 +428,31 @@ img, video { max-width: 100%; height: auto; display: block; }
   margin-left:-50vw;
   overflow:hidden;
   height:var(--carousel-height);
-  background: linear-gradient(180deg,#0b0b0c 0%,#2f2f2f 100%);
+  background:#000000;
   z-index:1;
-}
-
-.carousel::before{
-  content:"";
-  position:absolute;
-  inset:-60px;
-  background-image:url("https://i.pinimg.com/736x/d7/be/1b/d7be1b86ae5b04c0fc1892767d17c79f.jpg");
-  background-size:cover;
-  background-position:center;
-  filter: blur(2px) brightness(80%) contrast(92%) saturate(105%);
-  transform: translateZ(0) scale(0.9);
-  opacity:.20;
-  pointer-events:none;
-  z-index:0;
 }
 
 .carousel::after{
   content:"";
   position:absolute;
-  left:0; right:0; bottom:0;
-  height:220px;
+  left:0;
+  right:0;
+  bottom:0;
+  height:clamp(220px, 32vh, 360px);
   pointer-events:none;
-  z-index:1;
+  z-index:3;
   background: linear-gradient(
     to bottom,
-    rgba(11,11,12,0) 0%,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,.22) 38%,
+    rgba(0,0,0,.72) 74%,
     var(--bg-panel) 100%
   );
 }
 
+.carousel + .section{
+  position: relative;
+}
 .carousel-track{
   position:absolute;
   inset:0;
@@ -449,14 +464,17 @@ img, video { max-width: 100%; height: auto; display: block; }
 
 .carousel-topfade{
   position:absolute;
-  left:0; right:0; top:0;
-  height: 180px;
+  left:0;
+  right:0;
+  top:0;
+  height: 220px;
   z-index: 1;
   pointer-events:none;
   background: linear-gradient(
     to bottom,
-    rgba(11,11,12,1) 0%,
-    rgba(11,11,12,0) 100%
+    #0b0b0c 0%,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(58, 32, 40, 0) 100%
   );
 }
 
@@ -482,15 +500,15 @@ img, video { max-width: 100%; height: auto; display: block; }
 
 .slide-title{
   font-weight:400;
+  color:#ffffff;
   letter-spacing:.2px;
   font-size: clamp(2.1rem, 5vw, 5.5rem);
-  background-image: linear-gradient(90deg,#ffffff 0%,#393b3c 80%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  margin:0 0 2.25rem 0; 
+  line-height: 2;
+  margin:0;
 }
-
+.slide-copy .button-59{
+  margin-top: 2rem;
+}
 .slide-headline{
   font-size: clamp(1.6rem, 3vw, 4.7rem);
   line-height:1.1;
@@ -499,6 +517,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 }
 
 .slide-body{
+  display: none;
   max-width:46ch;
   color:rgba(255,255,255,.85);
   margin:0 0 1.25rem 0;
@@ -557,9 +576,33 @@ img, video { max-width: 100%; height: auto; display: block; }
   transform:translateX(-50%);
   z-index:4;
   display:flex;
+  align-items:center;
   gap:10px;
 }
 
+.dots::before,
+.dots::after{
+  content:"";
+  display:block;
+  width:clamp(70px, 14vw, 190px);
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,.10) 35%,
+    rgba(255,255,255,.28) 100%
+  );
+  pointer-events:none;
+}
+
+.dots::after{
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.28) 0%,
+    rgba(255,255,255,.10) 65%,
+    transparent 100%
+  );
+}
 .dot{
   width:12px;
   height:12px;
@@ -625,7 +668,15 @@ footer > *:first-child { margin-top: 0; }
 
   /* Reduce top fades so content has room */
   .carousel-topfade{ height: 120px; }
-  .carousel::after{ height: 160px; }
+  .carousel::after{ height: 210px; }
+
+  .section.why::before{
+    width: min(420px, 78vw);
+  }
+
+  .section.why::after{
+    width: 60px;
+  }
 
   /* Slightly smaller button on phone */
   .button-59,

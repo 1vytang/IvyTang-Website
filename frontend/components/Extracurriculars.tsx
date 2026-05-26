@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from 'react';
-import { StaticImageData } from "next/image";
-
 const images = [
     '/pb_gbh.png',
     '/pb_group.png',
@@ -74,25 +72,19 @@ export default function ProductPage() {
             `}</style>
             
             {/* Intro */}
-            <div className="w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-black">
-            <div className="w-full max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-                {/* Left column */}
-                <div className="lg:col-span-6 lg:pl-8 text-center lg:text-left" style={{ marginTop: '100px', marginBottom: '-60px', marginLeft: '90px' }}>
-                    <h1 className="bg-gradient-to-r from-[#959595] to-[#65B4D0] inline-block text-transparent bg-clip-text mb-6 md:mb-4 font-bold text-[40px] md:text-[56px] font-manrope">
-                    Extracurriculars
+            <div className="w-full px-6 md:px-12 lg:px-20 pt-24 md:pt-32 lg:pt-40 pb-8 bg-black">
+                <div className="w-full max-w-7xl mx-auto">
+                    <h1 className="text-center lg:text-left text-white font-semibold text-[44px] md:text-[64px] font-manrope lg:pl-8 tracking-tight">
+                        <span className="inline-block pb-3">
+                            Extracurriculars
+                        </span>
+                        <span className="block h-[2px] w-full max-w-[560px] mx-auto lg:mx-0 bg-gradient-to-r from-transparent via-blue-400/80 to-transparent lg:from-blue-400/80 lg:via-blue-400/50 lg:to-transparent rounded-full" />
                     </h1>
                 </div>
-
-                {/* Right column */}
-                <div className="hidden lg:block lg:col-span-6" />
-                </div>
             </div>
-            </div>
-
 
             {/* Panel 1 */}
-            <div className="w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-black">
+            <div className="w-full px-6 md:px-12 lg:px-20 pt-4 md:pt-8 pb-6 md:pb-10 bg-black">
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
                 
@@ -112,12 +104,12 @@ export default function ProductPage() {
                 {/* Text Right */}
                 <div className="lg:col-span-6 text-white flex flex-col items-center lg:items-start">
                     <div className="w-full text-center lg:text-left">
-                    <h1 className="text-white text-[40px] md:text-[56px] leading-tight font-bold mb-6">
+                    <h1 className="text-white text-[40px] md:text-[56px] leading-tight font-medium mb-6">
                         Scout
                     </h1>
 
                     <p className="text-base md:text-lg leading-relaxed md:leading-[1.9] mb-6">
-                        During the Fall semester, I worked as a junior programmer on an interactive marketing website for the snow sports company Flowmersion (also known as Baseline Tech).
+                        Previously, I was junior developer on an interactive marketing website for the snow sports company Flowmersion (also known as Baseline Tech).
                         Collaborating closely with designers and fellow developers, I helped build a polished, client-facing site that showcased their snowboard analytics product and supported
                         multiple design iterations driven by client feedback.
                     </p>
@@ -128,7 +120,7 @@ export default function ProductPage() {
                     </p>
 
                     <p className="text-base md:text-lg leading-relaxed md:leading-[1.9]">
-                        In Spring 2026, I was promoted to Senior Developer, where I now lead a team of programmers responsible for delivering a new client project for Superpower Mentors.
+                        This past semester I served as Senior Developer, where I lead a team of programmers responsible for delivering a new client project for Superpower Mentors.
                         In this role, I manage team members, coordinate technical deliverables, and ensure the timely development of a high-quality product. Additional technical details about this
                         project and the previous one can be found on the{" "}
                         <a href="./projects" className="text-blue-400 underline hover:text-blue-300 transition">
@@ -146,14 +138,14 @@ export default function ProductPage() {
 
 
             {/* Panel 2 */}
-            <div className="w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 mb-20 bg-black">
+            <div className="w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 mb-5 bg-black">
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
 
                 {/* Text Left */}
                 <div className="lg:col-span-6 lg:pl-8 text-white flex flex-col items-center lg:items-start">
-                    <div className="w-full text-center lg:text-left" style={{ marginLeft: '90px' }}>
-                    <h1 className="text-white text-[40px] md:text-[56px] leading-tight font-bold mb-6">
+                    <div className="w-full text-center lg:text-left lg:ml-[90px]">
+                    <h1 className="text-white text-[40px] md:text-[56px] leading-tight font-medium mb-6">
                         WiCyS
                     </h1>
 
@@ -161,16 +153,7 @@ export default function ProductPage() {
                     I joined Women in CyberSecurity (WiCyS) in Spring 2025 and was elected Secretary in Fall 2025.
                     WiCyS is important to me because I am passionate about increasing access and representation for gender minorities in STEM and cybersecurity.
                     This is a continuation of a childhood of such activities which were what allowed me to pursue cybersecurity in the first place including Girl Scouts and serving as Captain of an all-girls FIRST Robotics team.
-                    Through these activities, I saw firsthand how mentorship and opportunity help talented students thrive. Our team&apos;s mission was featured by Boston radio station GBH{" "}
-                    <a
-                        href="https://www.wgbh.org/news/national/2023-04-04/lexington-robotics-team-engineers-space-for-girls-to-thrive-in-stem"
-                        className="text-blue-400 underline hover:text-blue-300 transition"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        (GBH Article!)
-                    </a>
-                    .
+                    Through these activities, I saw firsthand how mentorship and opportunity help talented students thrive.
                     </p>
 
                     <p className="text-base md:text-lg leading-relaxed md:leading-[1.9] mb-6">
@@ -208,43 +191,47 @@ export default function ProductPage() {
             </div>
             </div>
 
-            {/* Panel 4*/}
-            <div className="w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-black">
+            {/* Panel 4 */}
+            <div className="w-full px-6 md:px-12 lg:px-20 pt-6 md:pt-8 pb-12 md:pb-20 bg-black">
                 <div className="w-full max-w-7xl mx-auto">
-                    <div className="flex flex-col lg:flex-row gap-12 md:gap-20 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
                         {/* Text Left */}
-                        <div className="w-full lg:w-1/2 lg:pl-8 text-center lg:text-left">
-                        <h2 className="bg-gradient-to-r from-[#959595] to-[#65B4D0] inline-block text-transparent bg-clip-text mb-6 md:mb-4 font-bold text-[40px] md:text-[56px] font-manrope">
-                            High School Highlights
-                        </h2>
+                        <div className="lg:col-span-6 lg:pl-8 text-center lg:text-left text-white">
+                            <h2 className="text-white mb-8 md:mb-6 font-semibold text-[44px] md:text-[64px] leading-tight font-manrope tracking-tight">
+                                <span className="inline-block pb-3">
+                                    High School Highlights
+                                </span>
+                                <span className="block h-[2px] w-full max-w-[640px] mx-auto lg:mx-0 bg-gradient-to-r from-transparent via-blue-400/80 to-transparent lg:from-blue-400/80 lg:via-blue-400/50 lg:to-transparent rounded-full" />
+                            </h2>
 
-                        <p className="text-white text-base md:text-lg leading-relaxed md:leading-[1.9] mb-6">
-                            Captain of FIRST Robotics Team, The Parity Bits. Our team earned awards at the Massachusetts State Championships during the 2023 and 2024 seasons.{" "}
-                            <a
-                            href="https://www.instagram.com/theparitybits/"
-                            className="text-blue-400 underline hover:text-blue-300 transition"
-                            target="_blank"
-                            rel="noreferrer"
-                            >
-                            Instagram
-                            </a>
-                        </p>
+                            <p className="text-base md:text-lg leading-relaxed md:leading-[1.9] mb-6">
+                                I was a Captain of FIRST Robotics Team, The Parity Bits. Our team earned awards at the Massachusetts State Championships during the 2023 and 2024 seasons. Our team was featured by Boston radio station {" "}
+                    <a
+                        href="https://www.wgbh.org/news/national/2023-04-04/lexington-robotics-team-engineers-space-for-girls-to-thrive-in-stem"
+                        className="text-blue-400 underline hover:text-blue-300 transition"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        GBH!
+                    </a>
+                
+                            </p>
 
-                        <p className="text-white text-base md:text-lg leading-relaxed md:leading-[1.9] mb-6">
-                            Built and launched a fundraising webpage to support Lexington, Massachusetts local library renovation project.{" "}
-                            <a
-                            href="https://youthsteaminitiative.org/chirp.html"
-                            className="text-blue-400 underline hover:text-blue-300 transition"
-                            target="_blank"
-                            rel="noreferrer"
-                            >
-                            More details here
-                            </a>
-                        </p>
+                            <p className="text-base md:text-lg leading-relaxed md:leading-[1.9] mb-6">
+                                Built and launched a fundraising webpage to support Lexington, Massachusetts local library renovation project.{" "}
+                                <a
+                                    href="https://youthsteaminitiative.org/chirp.html"
+                                    className="text-blue-400 underline hover:text-blue-300 transition"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    More details here
+                                </a>
+                            </p>
                         </div>
 
-                        <div className="w-full lg:w-1/2 flex flex-col md:flex-row gap-6 md:gap-8 items-center lg:pr-8">
-                            <ImageCarousel/>
+                        <div className="lg:col-span-6 w-full overflow-hidden flex items-center lg:pr-8">
+                            <ImageCarousel />
                         </div>
                     </div>
                 </div>
