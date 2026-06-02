@@ -7,12 +7,12 @@ import Image from "next/image";
  * Update this array to change dropdown content.
  *
  * Add:
- *  - imageSrc: screenshot/visual for the project (stored in /public/projects/...)
+ *  - imageSrc: screenshot/visual for the project
  *  - imageAlt: accessible description
  */
 const faqData = [
   {
-    question: "Flowmersion Marketing Website",
+    question: "Flowmersion Product Website",
     imageSrc: "/flowmersion.png",
     imageAlt: "Flowmersion marketing website preview",
     answer: (
@@ -22,23 +22,23 @@ const faqData = [
           analytics device named Snow-in for snowboarders.
         </p>
         <p>
-          I collaborated with 4 developers and 5 designers to replace a single outdated webpage with a modern,
+          I collaborated with 4 developers, 5 designers, and the client to replace a single outdated webpage with a multi-page modern,
           responsive site featuring interactive components and CMS-driven content.
         </p>
         <p>
-          The platform includes a secure waitlist and confirmation email when users enter their data. Data collection and management is backed by Supabase. This is fully integrated within the website providing a seamless experience and replaces a previous external Google form.
+          The platform includes a secure waitlist and confirmation email when users enter their data, with data collection and management backed by Supabase. This is fully integrated within the website providing a seamless experience and replaces a previous external Google form.
         </p>
-          {/* GitHub link */}
-    <p className="pt-2">
-      <a
-        href="https://github.com/Scout-NU/baseline-tech-website"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-white underline underline-offset-4 hover:text-white/80 transition"
-      >
-        View GitHub repository →
-      </a>
-    </p>
+
+        <p className="pt-2">
+          <a
+            href="https://github.com/Scout-NU/baseline-tech-website"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-blue-400 underline underline-offset-4 hover:text-blue-300 transition"
+          >
+            View GitHub repository
+          </a>
+        </p>
       </>
     ),
   },
@@ -49,15 +49,14 @@ const faqData = [
     answer: (
       <>
         <p>
-          Sanguine is a two-player strategy card game inspired by Queen’s Blood, which was implemented using object-oriented design
-          principles and the MVC (model, view, controller) architecture.
+          Sanguine is a two-player strategy card game inspired by the game Queen&apos;s Blood and implemented using object-oriented design
+          principles and the MVC {"(model, view, controller)"} architecture.
         </p>
         <p>
-          The project was built from scratch in a pair-programmed setting with a Java Swing GUI in Intellij and automated tests (with mocks) to validate components.
+          The project was built from scratch in a pair-programmed setting with a Java Swing GUI in Intellij and hundreds of self-written tests with mocks to validate each component.
         </p>
         <p>
-          Additionally, two AI strategies enable automated gameplay. This project received an A in CS 3100 (Program
-          Design &amp; Implementation).
+          Additionally, two AI strategies were included to enable automated gameplay. The game is playable with two people, and provides a straightforward and aesthetic gaming experience for users.
         </p>
       </>
     ),
@@ -78,22 +77,21 @@ const faqData = [
         </p>
         <p>
           I further extended the project beyond course requirements by implementing filesystem support for large files, dynamic
-          allocation, and growth handling. The project received full credit with extra credit in CS 3650 (Computer
-          Systems).
+          allocation, and growth handling. 
         </p>
       </>
     ),
   },
   {
-    question: "Ongoing — Supermentors Mentorship Platform",
+    question: "Supermentors Mentorship Website",
     answer: (
       <>
         <p>
-          Supermentors is an ongoing project where I serve as a senior developer through Scout, leading a team of three junior developers.
+          Superpower Mentors {"(SPM)"} was my first project as a Senior Developer on Scout, leading a team of four junior developers.
         </p>
         <p>
-          The platform will connect college mentors with younger students through the Supermentors organization and is being built from scratch using React and
-          Node.js, with plans for secure authentication and mentor profiles.
+          SPM helps connect experienced mentors with younger students facing learning difficulties. We built the multipage website from scratch using React and
+          Node.js. Some unique features include a pop-up quiz which lets the organization view statistics on user responses, an embedded Typeform for student applications, interactive features with transitions.
         </p>
       </>
     ),
@@ -106,47 +104,43 @@ export default function Projects() {
       className="
         relative min-h-screen overflow-hidden
         pt-32 md:pt-40 pb-24 px-6
-        bg-gradient-to-b from-[#0B0B0C] via-[#111827] to-[#0B0B0C]
+        bg-black
       "
     >
-      {/* Soft background glow */}
       <div
-        className="absolute top-0 left-1/4 w-[620px] h-[620px] rounded-full opacity-40 pointer-events-none"
+        className="absolute top-0 left-1/4 w-[620px] h-[620px] rounded-full opacity-20 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(14,27,34,0.0) 70%)",
+          background: "radial-gradient(circle, rgba(96,165,250,0.18) 0%, rgba(0,0,0,0) 70%)",
           filter: "blur(90px)",
         }}
       />
+
       <div
-        className="absolute bottom-0 right-1/4 w-[620px] h-[620px] rounded-full opacity-40 pointer-events-none"
+        className="absolute bottom-0 right-1/4 w-[620px] h-[620px] rounded-full opacity-20 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(14,27,34,0.0) 70%)",
+          background: "radial-gradient(circle, rgba(96,165,250,0.18) 0%, rgba(0,0,0,0) 70%)",
           filter: "blur(90px)",
         }}
       />
 
       <div className="relative z-10">
-        {/* Panel 1 */}
         <div className="max-w-7xl mx-auto mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-center md:text-left mx-auto md:mx-0 max-w-xl">
-              <h2 className="font-['Manrope'] text-[52px] md:text-[56px] font-semibold">
-                <span className="bg-gradient-to-r from-white to-[#A6A6A6] bg-clip-text text-transparent">Projects</span>
+              <h2 className="font-['Manrope'] text-[52px] md:text-[56px] font-semibold text-white tracking-tight">
+                <span className="inline-block pb-3">Projects</span>
+                <span className="block h-[2px] w-full max-w-[260px] mx-auto md:mx-0 bg-gradient-to-r from-transparent via-blue-400/80 to-transparent md:from-blue-400/80 md:via-blue-400/50 md:to-transparent rounded-full" />
               </h2>
-
-              <p className="text-white/90 font-['Manrope'] text-[22px] md:text-[24px] font-medium leading-tight">
-                Introduction
-              </p>
 
               <div className="space-y-4 text-white/90 font-['Manrope'] text-[19px] md:text-[20px] leading-relaxed">
                 <p>
-                  The following projects represent my technical work completed across coursework and extracurriculars. Due to academic policies, source code for certain projects are not publicly visible.
+                  The following projects represent technical work completed across coursework and extracurriculars. Due to academic policies, source code for certain projects are not publicly visible.
                   READMEs are available on my GitHub @1vytang and full code can be shared upon request.
                 </p>
                 <p>
                   Each project was chosen to highlight different skills including systems programming, full-stack development, and
                   collaborative software design. The projects either have potential for real-world applications or are actively used by real
-                  users.
+                  people.
                 </p>
               </div>
             </div>
@@ -164,7 +158,6 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Panel 2 */}
         <div className="max-w-7xl mx-auto mb-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex items-center justify-center order-2 md:order-1">
@@ -179,10 +172,9 @@ export default function Projects() {
             </div>
 
             <div className="space-y-6 order-1 md:order-2 text-center md:text-left mx-auto md:mx-0 max-w-xl">
-              <h2 className="font-['Manrope'] text-[52px] md:text-[56px] font-semibold">
-                <span className="bg-gradient-to-r from-white to-[#A6A6A6] bg-clip-text text-transparent">
-                  What I Learned
-                </span>
+              <h2 className="font-['Manrope'] text-[52px] md:text-[56px] font-semibold text-white tracking-tight">
+                <span className="inline-block pb-3">What I Learned</span>
+                <span className="block h-[2px] w-full max-w-[420px] mx-auto md:mx-0 bg-gradient-to-r from-transparent via-blue-400/80 to-transparent md:from-blue-400/80 md:via-blue-400/50 md:to-transparent rounded-full" />
               </h2>
 
               <div className="space-y-4 text-white/90 font-['Manrope'] text-[19px] md:text-[20px] leading-relaxed">
@@ -199,18 +191,13 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Panel 3 - FAQ */}
         <div className="max-w-7xl mx-auto">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="font-['Manrope'] text-[52px] md:text-[56px] font-semibold">
-                <span className="bg-gradient-to-r from-white to-[#A6A6A6] bg-clip-text text-transparent">
-                  Project Descriptions
-                </span>
+              <h2 className="font-['Manrope'] text-[52px] md:text-[56px] font-semibold text-white tracking-tight">
+                <span className="inline-block pb-3">Project Descriptions</span>
+                <span className="block h-[2px] w-full max-w-[560px] bg-gradient-to-r from-blue-400/80 via-blue-400/50 to-transparent rounded-full" />
               </h2>
-              <p className="text-white/90 font-['Manrope'] text-[22px] md:text-[24px] font-medium leading-tight">
-                Learn more about the details of past and ongoing projects.
-              </p>
             </div>
 
             <div className="space-y-4 mt-10">
@@ -225,6 +212,7 @@ export default function Projects() {
                 >
                   <summary className="text-[18px] md:text-[20px] font-semibold text-white cursor-pointer flex justify-between items-center">
                     <span>{faq.question}</span>
+
                     <svg
                       width="22"
                       height="44"
@@ -240,7 +228,6 @@ export default function Projects() {
                     </svg>
                   </summary>
 
-                  {/* Content */}
                   <div className="mt-6 space-y-5 text-white/80 leading-relaxed text-[16px] md:text-[17px]">
                     {faq.imageSrc ? (
                       <Image
@@ -252,7 +239,6 @@ export default function Projects() {
                       />
                     ) : null}
 
-                    {/* Paragraph spacing for answer blocks */}
                     <div className="space-y-4">{faq.answer}</div>
                   </div>
                 </details>
