@@ -516,14 +516,14 @@ export const apps: Record<AppId, AppDef> = {
     render: () => (
       <div className="doc">
         <video className="player" src="/asia_photos.mp4" autoPlay muted loop playsInline controls preload="metadata" />
-        <p className="caption">Fun fact: I love photography (see above), and I bring my digi camera around with me a lot!</p>
+        <p className="caption">Fun fact: I love photography (see above), and I bring my digital camera around with me a lot!</p>
       </div>
     ),
   },
 
   links: {
-    title: "Internet",
-    label: "Internet",
+    title: "Social",
+    label: "Social",
     icon: "globe",
     width: 420,
     render: () => (

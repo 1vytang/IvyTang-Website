@@ -2,7 +2,7 @@
  * Decorative wallpaper: a cozy room with a round moon window onto misty mountains,
  * a long blossom branch dropping petals, a set tea table,
  * potted bamboo, and a few original little creatures living in the room:
- * a sleeping cat, two acorn sprites, and a bird.
+ * a sleeping cat and a bird.
  */
 
 import BlossomBranch from "./BlossomBranch";
