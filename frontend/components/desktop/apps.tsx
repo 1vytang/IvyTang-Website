@@ -16,12 +16,13 @@ export type AppId =
   | "sanguine"
   | "fuse"
   | "supermentors"
+  | "moredip"
   | "research"
+  | "analyst"
+  | "itintern"
   | "extracurriculars"
   | "scout"
   | "wicys"
-  | "robotics"
-  | "chirp"
   | "travel"
   | "links"
   | "trash";
@@ -77,7 +78,8 @@ function Folder({ items, open, note }: { items: AppId[]; open: OpenFn; note?: st
         {items.map((id) => (
           <button key={id} type="button" className="file" onClick={() => open(id)}>
             <Icon name={apps[id].icon} size={52} />
-            <span>{apps[id].label}</span>
+            {/* a zero-width space before "." and "_" lets long file names wrap at those points */}
+            <span>{apps[id].label.replace(/([._])/g, "\u200B$1")}</span>
           </button>
         ))}
       </div>
@@ -141,9 +143,30 @@ export const apps: Record<AppId, AppDef> = {
           Fundamentals
         </p>
 
-        <h3>Languages &amp; tools</h3>
+        <h3>Security tools</h3>
         <Tags
-          items={["Java", "C/C++", "Python", "JavaScript", "React", "SQL", "HTML/CSS", "Linux", "Git", "VS Code"]}
+          items={[
+            "Microsoft Defender",
+            "Microsoft Sentinel",
+            "KQL",
+            "Entra ID",
+            "Azure PIM",
+            "ServiceNow",
+            "BlueVoyant",
+            "Tenable",
+            "Wireshark",
+            "Burp Suite",
+            "Nmap",
+            "Action1",
+          ]}
+        />
+
+        <h3>Languages</h3>
+        <Tags items={["Python", "PowerShell", "Bash", "SQL", "C/C++", "Java", "JavaScript", "TypeScript"]} />
+
+        <h3>Systems &amp; tools</h3>
+        <Tags
+          items={["Linux", "Windows", "macOS", "Git", "React", "Next.js", "Microsoft 365", "SharePoint", "Google Workspace"]}
         />
 
         <h3>Academics</h3>
@@ -175,7 +198,7 @@ export const apps: Record<AppId, AppDef> = {
           Technical work from my classes and extracurriculars. Some source code is private because of academic
           policy. READMEs are on my GitHub (@1vytang), and I can share the full code on request.
         </p>
-        <Folder items={["flowmersion", "sanguine", "fuse", "supermentors"]} open={open} />
+        <Folder items={["moredip", "supermentors", "flowmersion", "sanguine", "fuse"]} open={open} />
       </>
     ),
   },
@@ -260,10 +283,34 @@ export const apps: Record<AppId, AppDef> = {
     ),
   },
 
+  moredip: {
+    title: "moredip_site",
+    label: "moredip_site",
+    icon: "dip",
+    width: 620,
+    render: () => (
+      <div className="doc">
+        <h2>MoreDip Website</h2>
+        <p className="meta">Scout client project · In progress</p>
+        <Tags items={["React", "Next.js", "TypeScript", "Tailwind CSS", "Shopify", "E-commerce"]} />
+        <p>
+          MoreDip is a high-protein dip brand, and my Scout team is building an interactive website for it right now.
+        </p>
+        <p>
+          The site is integrated with Shopify, so customers can browse the dips, check out, and place orders right on
+          the site.
+        </p>
+        <p>
+          <Ext href="https://github.com/Scout-NU/moredip">View the GitHub repository ↗</Ext>
+        </p>
+      </div>
+    ),
+  },
+
   supermentors: {
-    title: "supermentors_site",
-    label: "supermentors_site",
-    icon: "globe",
+    title: "superpowermentors_site",
+    label: "superpowermentors_site",
+    icon: "bolt",
     width: 620,
     render: () => (
       <div className="doc">
@@ -279,11 +326,73 @@ export const apps: Record<AppId, AppDef> = {
           organization see statistics on user responses, an embedded Typeform for student applications, and
           interactive elements with transitions.
         </p>
+        <p>
+          <Ext href="https://github.com/Scout-NU/superpower-mentors">View the GitHub repository ↗</Ext>
+        </p>
       </div>
     ),
   },
 
   /* ----- Research ----- */
+
+  analyst: {
+    title: "security_analyst_coop.log",
+    label: "Security Analyst Co-op",
+    icon: "shield",
+    width: 640,
+    render: () => (
+      <div className="doc">
+        <h2>Security Analyst Co-op</h2>
+        <p className="meta">Northeastern University · Sep 2026 – Present</p>
+        <Tags items={["Microsoft Defender", "Sentinel / KQL", "ServiceNow", "BlueVoyant", "Entra ID", "Azure PIM", "Tenable"]} />
+        <h3>Incident triage</h3>
+        <p>
+          I triage 50+ security incidents and phishing reports every week using ServiceNow, BlueVoyant, and Microsoft
+          Defender. For lower-severity threats I handle remediation myself: analyzing sign-in activity, resetting
+          passwords, and blocking suspicious users.
+        </p>
+        <h3>Access reviews</h3>
+        <p>
+          I run privileged access reviews in Microsoft Entra ID and Azure PIM, checking role assignments against what
+          people actually need so the university stays close to least privilege.
+        </p>
+        <h3>Vulnerability and event analysis</h3>
+        <p>
+          I analyze vulnerability and security-event data in Tenable and Microsoft Sentinel (KQL), and help build
+          automation workflows for IP intelligence and asset discovery.
+        </p>
+      </div>
+    ),
+  },
+
+  itintern: {
+    title: "it_internship.doc",
+    label: "IT Internship",
+    icon: "badge",
+    width: 640,
+    render: () => (
+      <div className="doc">
+        <h2>IT Intern</h2>
+        <p className="meta">Coca-Cola Beverages Northeast · May – Aug 2026</p>
+        <Tags items={["Action1", "Endpoint security", "Device provisioning", "SharePoint"]} />
+        <h3>Vulnerabilities and endpoints</h3>
+        <p>
+          I monitored company-wide vulnerabilities in Action1 and supported endpoint security through computer imaging,
+          iPad provisioning, and device troubleshooting.
+        </p>
+        <h3>Mobile devices</h3>
+        <p>
+          I managed the mobile device lifecycle through Verizon, from provisioning and access support to suspending
+          service.
+        </p>
+        <h3>SharePoint migration</h3>
+        <p>
+          I supported the company-wide move from OneDrive to SharePoint by writing documentation and building
+          SharePoint sites for 3+ departments.
+        </p>
+      </div>
+    ),
+  },
 
   research: {
     title: "airtag_research.pdf",
@@ -293,6 +402,7 @@ export const apps: Record<AppId, AppDef> = {
     render: () => (
       <div className="doc">
         <h2>Detecting AirTag-like trackers</h2>
+        <p className="meta">Research Intern · Northeastern Cybersecurity and Privacy Institute · Sep 2025 – Apr 2026</p>
         <Tags items={["Network privacy", "BLE", "ESP32", "Data analysis"]} />
         <p>
           My research is in network privacy and security. We&apos;re building a device that notices when someone is
@@ -316,13 +426,6 @@ export const apps: Record<AppId, AppDef> = {
           We store the fingerprints we see and track how long they stick around. That lets us spot long-term trackers
           even though they change their identifiers quickly.
         </p>
-        <div className="callout">
-          <Image src="/research_team.png" alt="The research team collecting data around Boston" width={334} height={418} sizes="120px" />
-          <div>
-            <strong>The paper on this research is under peer review.</strong>
-            <span>Collecting data around Boston with the team!</span>
-          </div>
-        </div>
       </div>
     ),
   },
@@ -337,7 +440,7 @@ export const apps: Record<AppId, AppDef> = {
     render: (open) => (
       <>
         <p className="folder-intro">Leadership and passions outside the classroom.</p>
-        <Folder items={["scout", "wicys", "robotics", "chirp"]} open={open} />
+        <Folder items={["scout", "wicys"]} open={open} />
       </>
     ),
   },
@@ -355,26 +458,25 @@ export const apps: Record<AppId, AppDef> = {
           <Pic src="/scout_spotlight.png" alt="Scout newsletter spotlight featuring Ivy" w={636} h={932} />
           <div>
             <p>
-              I started as a junior developer on an interactive marketing website for the snowsports company
-              Flowmersion (also called Baseline Tech). With designers and other developers, I helped build a polished,
-              client-facing site that showed off their snowboard analytics product and went through several rounds of
-              changes based on client feedback.
-            </p>
-            <p>
-              That project made me better at working on a diverse team, explaining technical decisions clearly, and
-              turning client requirements into code that works and is easy to maintain. The finished site supported
-              Flowmersion&apos;s product marketing and public launch.
+              I started as a junior developer making an interactive marketing website for the snowsports company
+              Flowmersion (also called Baseline Tech). I helped build a polished, client-facing site that showed off
+              their snowboard analytics product and went through several rounds of changes based on client feedback.
             </p>
           </div>
         </div>
         <p>
-          This past semester I was a Senior Developer, leading the team of programmers that built a new client
-          project for Superpower Mentors. I managed team members, coordinated technical deliverables, and made sure
-          we shipped a high-quality product on time.
+          These past two semesters I have been a Senior Developer, leading the team of programmers to build new
+          websites for Superpower Mentors and MoreDip. I manage team members, coordinate technical deliverables, and
+          make sure we ship a high-quality product on time.
+        </p>
+        <p>
+          Right now my team is building an interactive website for MoreDip, a high-protein dip brand, with Shopify
+          built in so customers can check out and place orders.
         </p>
         <div className="btn-row">
           <button type="button" className="btn" onClick={() => open("flowmersion")}>open flowmersion_site</button>
-          <button type="button" className="btn" onClick={() => open("supermentors")}>open supermentors_site</button>
+          <button type="button" className="btn" onClick={() => open("supermentors")}>open superpowermentors_site</button>
+          <button type="button" className="btn" onClick={() => open("moredip")}>open moredip_site</button>
         </div>
       </div>
     ),
@@ -388,21 +490,14 @@ export const apps: Record<AppId, AppDef> = {
     render: () => (
       <div className="doc">
         <h2>Women in CyberSecurity (WiCyS)</h2>
-        <Tags items={["Secretary", "200+ member newsletter", "Events"]} />
-        <Pic src="/wicys_post.png" alt="WiCyS event post" w={1332} h={1350} />
+        <Tags items={["Vice President", "Technical workshops", "200+ student newsletter", "Events"]} />
+        <Pic src="/wicys_vp.png" alt="NU WiCyS board feature: Ivy Tang, Vice-President, Cybersecurity major from Lexington, MA" w={1092} h={888} />
+        <p>I joined WiCyS in Spring 2025, was elected Secretary in Fall 2025, and am now Vice President.</p>
         <p>
-          I joined WiCyS in Spring 2025 and was elected Secretary in Fall 2025. It matters to me because I care about
-          giving gender minorities more access and representation in STEM and cybersecurity. That started in
-          childhood, with activities like Girl Scouts and captaining an all-girls FIRST Robotics team, which are what
-          let me pursue cybersecurity in the first place. They showed me how much mentorship and opportunity help
-          talented students thrive.
-        </p>
-        <p>
-          As Secretary, I work with the executive board to plan technical workshops, community events, and networking
-          opportunities. These include our annual CTF with NU Security Club and talks from people across the
-          cybersecurity industry. I also write a weekly newsletter for 200+ members about upcoming events and
-          national WiCyS opportunities. During the 2025–2026 school year, I helped recruit 30+ new members through
-          outreach and club fairs.
+          As Vice President, I coordinate and present technical cybersecurity workshops, and I work with the executive
+          board to plan community events and networking opportunities. These include our annual CTF with CTF Club and NU
+          Security Club as well as talks from people across the cybersecurity industry. During the 2025–2026 school
+          year, I helped recruit 30+ new members through outreach and club fairs.
         </p>
         <p>
           <Ext href="https://www.instagram.com/nuwicys/">See our recent events on Instagram ↗</Ext>
@@ -411,67 +506,17 @@ export const apps: Record<AppId, AppDef> = {
     ),
   },
 
-  robotics: {
-    title: "parity_bits.exe",
-    label: "Parity Bits",
-    icon: "robot",
-    width: 660,
-    render: () => (
-      <div className="doc">
-        <h2>FIRST Robotics: The Parity Bits</h2>
-        <Tags items={["Captain", "High school", "MA State Championships"]} />
-        <div className="pics">
-          <Pic src="/pb_gbh.png" alt="The Parity Bits robotics team featured by GBH" w={1296} h={958} />
-          <Pic src="/pb_group.png" alt="The Parity Bits team group photo" w={1266} h={982} />
-        </div>
-        <p>
-          I was Captain of The Parity Bits, an all-girls FIRST Robotics team. We won awards at the Massachusetts State
-          Championships in the 2023 and 2024 seasons, and Boston radio station GBH featured our team.
-        </p>
-        <p>
-          <Ext href="https://www.wgbh.org/news/national/2023-04-04/lexington-robotics-team-engineers-space-for-girls-to-thrive-in-stem">
-            Read the GBH story ↗
-          </Ext>
-        </p>
-      </div>
-    ),
-  },
-
-  chirp: {
-    title: "chirp_fundraiser",
-    label: "CHIRP Fundraiser",
-    icon: "photo",
-    width: 660,
-    render: () => (
-      <div className="doc">
-        <h2>Library Fundraising Webpage</h2>
-        <Tags items={["Youth STEAM Initiative", "Web", "Community"]} />
-        <div className="pics">
-          <Pic src="/steam_team.png" alt="Youth STEAM Initiative team" w={2210} h={1224} />
-          <Pic src="/steam_team2.png" alt="Youth STEAM Initiative team at an event" w={1032} h={792} />
-        </div>
-        <p>
-          I built and launched a fundraising webpage for the renovation of the local library in Lexington,
-          Massachusetts.
-        </p>
-        <p>
-          <Ext href="https://youthsteaminitiative.org/chirp.html">More details here ↗</Ext>
-        </p>
-      </div>
-    ),
-  },
-
   /* ----- Extras ----- */
 
   travel: {
-    title: "travels.mp4",
-    label: "travels.mp4",
+    title: "photography.mp4",
+    label: "photography.mp4",
     icon: "torii",
     width: 720,
     render: () => (
       <div className="doc">
         <video className="player" src="/asia_photos.mp4" autoPlay muted loop playsInline controls preload="metadata" />
-        <p className="caption">Moments from my travels in Asia. I took all the photos myself.</p>
+        <p className="caption">Fun fact: I love photography (see above), and I bring my digi camera around with me a lot!</p>
       </div>
     ),
   },
@@ -495,10 +540,6 @@ export const apps: Record<AppId, AppDef> = {
           <Icon name="mail" size={32} />
           <a className="link" href="mailto:tang.ivy@northeastern.edu">tang.ivy@northeastern.edu</a>
         </li>
-        <li>
-          <Icon name="photo" size={32} />
-          <Ext href="https://www.instagram.com/nuwicys/">NU WiCyS Instagram</Ext>
-        </li>
       </ul>
     ),
   },
@@ -510,13 +551,6 @@ export const apps: Record<AppId, AppDef> = {
     width: 400,
     render: () => (
       <ul className="trash-list">
-        <li>
-          <Icon name="folder" size={36} />
-          <span>
-            <strong>old_portfolio/</strong>
-            <small>Replaced by this desktop</small>
-          </span>
-        </li>
         <li>
           <Icon name="code" size={36} />
           <span>
@@ -533,8 +567,10 @@ export const apps: Record<AppId, AppDef> = {
 export const desktopIcons: AppId[] = [
   "welcome",
   "about",
-  "projects",
+  "analyst",
+  "itintern",
   "research",
+  "projects",
   "extracurriculars",
   "travel",
   "links",

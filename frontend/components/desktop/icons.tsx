@@ -102,15 +102,40 @@ const icons = {
       <path d="M42 24l4 6-4 6-4-6z" fill={C.vermilion} {...S} transform="rotate(8 42 30)" />
     </>
   ),
-  robot: (
+  shield: (
     <>
-      <line x1="32" y1="18" x2="32" y2="10" {...S} />
-      <circle cx="32" cy="8" r="3" fill={C.mustard} {...S} />
-      <rect x="12" y="18" width="40" height="32" rx="7" fill={C.taupe} {...S} />
-      <circle cx="24" cy="31" r="4" fill={C.paper} {...S} />
-      <circle cx="40" cy="31" r="4" fill={C.paper} {...S} />
-      <path d="M25 41h14" fill="none" {...S} />
-      <path d="M12 30H7M52 30h5" fill="none" {...S} />
+      <path d="M32 5L54 13V30C54 44 44 54 32 59C20 54 10 44 10 30V13Z" fill={C.sage} {...S} />
+      <path d="M32 11L48 17V30C48 40 41 48 32 52Z" fill={C.sageDark} />
+      <rect x="23" y="29" width="18" height="14" rx="2.5" fill={C.paper} {...S} />
+      <path d="M26 29v-4a6 6 0 0 1 12 0v4" fill="none" {...S} />
+      <circle cx="32" cy="35.5" r="2" fill={INK} />
+    </>
+  ),
+  badge: (
+    <>
+      <path d="M20 4L32 18L44 4" fill="none" stroke={C.vermilion} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="27" y="15" width="10" height="7" rx="2" fill={C.taupe} {...S} />
+      <rect x="12" y="20" width="40" height="38" rx="5" fill={C.paper} {...S} />
+      <rect x="18" y="28" width="12" height="14" rx="2" fill={C.tan} {...S} />
+      <circle cx="24" cy="33" r="2.6" fill={C.caramel} />
+      <path d="M35 30h11M35 36h11M35 42h7M18 50h28" fill="none" {...S} strokeWidth={2.25} />
+    </>
+  ),
+  dip: (
+    <>
+      <path d="M38 30L50 8L56 12L46 34Z" fill={C.mustard} {...S} />
+      <path d="M44 22l5 3M47 16l4 2" fill="none" stroke={C.mustardDark} strokeWidth="2" strokeLinecap="round" />
+      <path d="M8 32h48c0 14-10 24-24 24S8 46 8 32Z" fill={C.paper} {...S} />
+      <path d="M10 32c4-6 10-8 16-5c4-4 12-4 16 0c6-3 11-1 14 5Z" fill={C.tan} {...S} />
+      <path d="M18 42q6 4 12 0" fill="none" stroke={C.sage} strokeWidth="3" strokeLinecap="round" />
+      <circle cx="40" cy="44" r="2" fill={C.vermilion} />
+    </>
+  ),
+  bolt: (
+    <>
+      <path d="M32.0 5.0L37.4 11.7L45.5 8.6L46.8 17.2L55.4 18.5L52.3 26.6L59.0 32.0L52.3 37.4L55.4 45.5L46.8 46.8L45.5 55.4L37.4 52.3L32.0 59.0L26.6 52.3L18.5 55.4L17.2 46.8L8.6 45.5L11.7 37.4L5.0 32.0L11.7 26.6L8.6 18.5L17.2 17.2L18.5 8.6L26.6 11.7Z" fill={C.blossom} {...S} />
+      <circle cx="32" cy="32" r="15" fill={C.paper} {...S} />
+      <path d="M35 18L24 34h7l-3 12l12-17h-7z" fill={C.mustard} {...S} />
     </>
   ),
   mail: (
